@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peak Traveller Taxi Service</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding-top: 60px; /* Adjust for fixed navbar */
+            background-color: #f8f9fa; /* Light gray background */
+            color: #343a40; /* Dark gray text color */
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+            color: #fff; /* White text color for section headers */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .welcome {
+            background: url('welcome-background.jpg') center/cover no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 150px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .welcome h1 {
+            font-size: 3em;
+            animation: changeText 20s infinite, changeFont 20s infinite;
+            transition: color 1s;
+        }
+
+        @keyframes changeText {
+            0%, 20% {
+                content: "Discover the City with Peak Traveller";
+                color: #ffc107;
+            }
+            25%, 45% {
+                content: "Your Journey Begins with Us";
+                color: #4caf50;
+            }
+            50%, 70% {
+                content: "Experience Comfort, Safety, and Reliability";
+                color: #2196f3;
+            }
+            75%, 95% {
+                content: "Ride in Style with Peak Traveller Taxis";
+                color: #ff5722;
+            }
+            100% {
+                content: "Welcome to Peak Traveller Taxi Service";
+                color: #e91e63;
+            }
+        }
+
+        @keyframes changeFont {
+            0%, 20% {
+                font-family: 'Arial', sans-serif;
+            }
+            25%, 45% {
+                font-family: 'Courier New', monospace;
+            }
+            50%, 70% {
+                font-family: 'Georgia', serif;
+            }
+            75%, 95% {
+                font-family: 'Times New Roman', serif;
+            }
+            100% {
+                font-family: 'Verdana', sans-serif;
+            }
+        }
+
+        .cta-button {
+            background-color: #ffc107;
+            color: #333;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #ff9800; /* Darker yellow on hover */
+        }
+
+        .services .card {
+            margin-bottom: 20px;
+        }
+
+        @keyframes moveTiles {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(50px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .gallery {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery .tile {
+            animation: rollInOut 20s infinite; /* Ultra slow rollInOut */
+        }
+
+        @keyframes rollInOut {
+            0%, 100% {
+                transform: scale(0) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1) rotate(360deg);
+                opacity: 1;
+            }
+        }
+
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+            animation: zoomInOut 15s infinite alternate;
+        }
+
+        @keyframes zoomInOut {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+    </style>
+	
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Peak Traveller Taxi Service</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#follow-us">Follow Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about-us">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallery">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#book-now">Book Now</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#offers">Offers</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="welcome">
+        <div class="container">
+            <div class="welcome-box">
+                <h1>Welcome to Peak Traveller Taxi Service</h1>
+            </div>
+            <a href="#book-now" class="cta-button">Book Now</a>
+        </div>
+    </section>
+
+    <section id="follow-us" style="background-image: url('../Peak Travelers/Media/p1.jpg');">
+        <div class="container">
+            <h2 style="color: #ffc107;">Follow Us</h2>
+            <p>Stay connected with us on social media:</p>
+            <ul>
+                <li>Facebook: <a href="https://www.facebook.com/peaktraveller">Peak Traveller</a></li>
+                <li>Twitter: <a href="https://twitter.com/peaktraveller">@peaktraveller</a></li>
+                <li>Instagram: <a href="https://www.instagram.com/peaktraveller">@peaktraveller</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="about-us" style="background-image: url('../Peak Travelers/Media/p2.jpg');">
+        <div class="container">
+            <h2 style="color: #4caf50;">About Us</h2>
+            <p>Welcome to Peak Traveller, your reliable taxi service. We are dedicated to providing safe and comfortable rides for our customers. Our experienced drivers and well-maintained vehicles ensure a pleasant journey for you.</p>
+        </div>
+    </section>
+
+     <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Gallery</h2>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="../Peak Travelers/Media/p1.jpg" alt="Cityscape">
+                        <div class="carousel-caption">
+                            <h3>Cityscape</h3>
+                            <p>Explore the city with our reliable taxi service.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="../Peak Travelers/Media/p2.jpg" alt="Night Lights">
+                        <div class="carousel-caption">
+                            <h3>Night Lights</h3>
+                            <p>Experience the city lights in the comfort of our taxis.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="../Peak Travelers/Media/p3.jpg" alt="Nature Drive">
+                        <div class="carousel-caption">
+                            <h3>Nature Drive</h3>
+                            <p>Enjoy a scenic drive surrounded by nature.</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="book-now" style="background-image: url('../Peak Travelers/Media/p3.jpg');">
+        <div class="container">
+            <h2 style="color: #ff5722;">Book Now</h2>
+            <p>Book your ride with Peak Traveller and experience convenient and reliable transportation.</p>
+            <form id="booking-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="pickup-point">Pickup Point:</label>
+                    <select class="form-control" id="pickup-point" name="pickup-point" required>
+                        <option value="airport">Airport</option>
+                        <option value="hotel">Hotel</option>
+                        <option value="station">Station</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="budget">Budget:</label>
+                    <select class="form-control" id="budget" name="budget" required>
+                        <option value="standard">Standard</option>
+                        <option value="premium">Premium</option>
+                        <option value="luxury">Luxury</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="trip-from">Trip From:</label>
+                    <input type="text" class="form-control" id="trip-from" name="trip-from" required>
+                </div>
+                <div class="form-group">
+                    <label for="trip-to">Trip To:</label>
+                    <input type="text" class="form-control" id="trip-to" name="trip-to" required>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="submitBooking()">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="offers" style="background-image: url('../Peak Travelers/Media/p4.jpg');">
+        <div class="container">
+            <h2 style="color: #e91e63;">Special Offers</h2>
+            <p>Check out our latest offers and promotions:</p>
+            <ul>
+                <li>Weekend Special: 10% off on all rides</li>
+                <li>New User Discount: Get $5 off on your first ride</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS and Popper.js CDN -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Twilio SMS Integration Script -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function submitBooking() {
+            // Collect form data
+            var name = $("#name").val();
+            var phone = $("#phone").val();
+            var pickupPoint = $("#pickup-point").val();
+            var budget = $("#budget").val();
+            var tripFrom = $("#trip-from").val();
+            var tripTo = $("#trip-to").val();
+
+            // Send SMS using Twilio
+            $.ajax({
+                type: "POST",
+                url: "YOUR_TWILIO_API_ENDPOINT",
+                data: {
+                    name: name,
+                    phone: phone,
+                    pickupPoint: pickupPoint,
+                    budget: budget,
+                    tripFrom: tripFrom,
+                    tripTo: tripTo
+                },
+                success: function(response) {
+                    alert("Booking successful! You will receive an SMS shortly.");
+                    // Reset form
+                    $("#booking-form")[0].reset();
+                },
+                error: function(error) {
+                    console.error("Error sending SMS:", error);
+                    alert("Error sending SMS. Please try again later.");
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

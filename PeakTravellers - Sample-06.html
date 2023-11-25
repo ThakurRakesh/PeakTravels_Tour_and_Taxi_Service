@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peak Travel Tour & Taxi Service</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+		div#navbarNav {
+    justify-content: end;
+}
+		<!-- v -->
+		 
+        @keyframes changeBackground {
+            0%, 20%, 40%, 60%, 80%, 100% {
+                background-color: #80cbc4; /* Teal background */
+            }
+            25% {
+                background-color: #ff8a65; /* Deep orange background */
+            }
+            50% {
+                background-color: #9ccc65; /* Light green background */
+            }
+            75% {
+                background-color: #9575cd; /* Deep purple background */
+            }
+        }
+
+        .welcome h1 {
+            font-size: 3em;
+            animation: changeText 20s infinite, changeFont 20s infinite;
+            transition: color 1s;
+        }
+
+        @keyframes changeText {
+            0%, 20% {
+                content: "Discover the City with Peak Traveller";
+                color: #ffb74d;
+            }
+            25%, 45% {
+                content: "Your Journey Begins with Us";
+                color: #81c784;
+            }
+            50%, 70% {
+                content: "Experience Comfort, Safety, and Reliability";
+                color: #4caf50;
+            }
+            75%, 95% {
+                content: "Ride in Style with Peak Traveller Taxis";
+                color: #ff8a65;
+            }
+            100% {
+                content: "Welcome to Peak Traveller Taxi Service";
+                color: #4e342e;
+            }
+        }
+
+        @keyframes changeFont {
+            0%, 20% {
+                font-family: 'Arial', sans-serif;
+            }
+            25%, 45% {
+                font-family: 'Courier New', monospace;
+            }
+            50%, 70% {
+                font-family: 'Georgia', serif;
+            }
+            75%, 95% {
+                font-family: 'Times New Roman', serif;
+            }
+            100% {
+                font-family: 'Verdana', sans-serif;
+            }
+        }
+
+        .cta-button {
+            background-color: #ffb74d; /* Amber background */
+            color: #004d40;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #ff9800; /* Darker orange on hover */
+        }
+
+        .logo {
+            max-height: 40px;
+        }
+
+        .services .card {
+            margin-bottom: 20px;
+        }
+
+        @keyframes moveTiles {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(50px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .gallery {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery .tile {
+            animation: rollInOut 20s infinite; /* Ultra slow rollInOut */
+        }
+
+        @keyframes rollInOut {
+            0%, 100% {
+                transform: scale(0) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1) rotate(360deg);
+                opacity: 1;
+            }
+        }
+
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+            animation: zoomInOut 15s infinite alternate;
+        }
+
+        @keyframes zoomInOut {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* Additional Styles for Better Visuals */
+        section h2, section p {
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #004d40;
+        }
+
+        form input,
+        form select,
+        form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #81c784; /* Light green border */
+            border-radius: 5px;
+        }
+
+		<!-- v -->
+		
+		<!-- v -->
+		 .follow-us-icons {
+            font-size: 50px; /* Larger icons for better visibility */
+            margin-top: 20px;
+        }
+
+        .follow-us-icons a {
+            margin: 0 20px; /* Increased margin for better spacing */
+            color: #333; /* Dark text color for icons */
+            transition: color 0.3s;
+        }
+
+        .follow-us-icons a:hover {
+            color: #ffb74d; /* Amber text color on hover */
+        }
+
+        .fab {
+            font-size: 2em; /* Adjust the size of Font Awesome icons */
+            margin: 0 15px; /* Adjust the margin between icons */
+            color: #007bff; /* Blue color for icons */
+            transition: color 0.3s;
+        }
+
+        .fab:hover {
+            color: #ff4500; /* Orange color on hover */
+        }
+
+        .follow-us-description {
+            margin-top: 20px;
+            font-size: 18px; /* Larger font size for better readability */
+        }
+		<!-- v -->
+		.car-details {
+            margin-top: 20px;
+        }
+
+        .driver-details {
+            margin-top: 20px;
+        }
+
+        .carousel-inner img {
+            max-width: 100%;
+            border-radius: 10px; /* Rounded edges for car photos */
+        }
+
+        .whatsapp-icon {
+            font-size: 24px;
+            color: #25D366; /* WhatsApp green color */
+        }
+
+        .small-image {
+            max-width: 100%;
+            border-radius: 10px; /* Rounded edges for small images */
+            margin-top: 10px;
+        }
+
+		<!-- v -->
+		body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Light gray background */
+            color: #333; /* Dark text color */
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: #ff8a80; /* Light red navbar */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            text-align: center;
+            color: #333; /* Dark text color for section headers */
+            background-color: #e0e0e0; /* Light background */
+            position: relative;
+            margin-top: 60px; /* Adjust for fixed navbar */
+            padding: 20px; /* Add padding */
+            border: 2px solid #ccc; /* Light border color */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        .decorative-background {
+            background-color: #90caf9; /* Light blue background */
+            padding: 20px;
+            border: 2px solid #64b5f6; /* Light border color */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        .welcome {
+            color: #333;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: changeBackground 20s infinite;
+            margin: 20px; /* Add margin */
+            padding: 20px; /* Add padding */
+            border: 2px solid #ccc; /* Light border color */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+                <!-- /* Additional Styles for Better Visuals */ -->
+        section h2, section p {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px; /* Add margin to form groups */
+        }
+
+		<!-- v -->
+		#book-now {
+            background-color: #f5f5f5;
+            padding: 60px 0;
+        }
+
+        #book-now h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        #booking-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        #booking-form label {
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        #booking-form .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        #booking-form input,
+        #booking-form select {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+            flex: 1;
+        }
+
+        #booking-form input:focus,
+        #booking-form select:focus {
+            border-color: #4285f4;
+        }
+
+        #booking-form button {
+            background-color: #4285f4;
+            color: #fff;
+            padding: 15px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #booking-form button:hover {
+            background-color: #1c4ae9;
+        }
+		<!-- v -->
+		<!-- /* Add this style for cursor animation */ -->
+    .nav-item:hover::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #ff8a80; /* Change this to the color you want */
+        transition: width 0.3s;
+    }
+
+    .nav-item:hover::after {
+        width: 100%;
+    }
+	
+.video-carousel {
+            display: flex;
+            overflow: hidden;
+            max-width: 100%;
+        }
+
+        .video-container {
+            width: 30%; /* Adjust the width as needed */
+            padding-right: 20px; /* Adjust the padding as needed */
+            position: relative;
+            cursor: pointer; /* Add cursor style for better UX */
+        }
+
+        .welcomeVideoBody {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            color: #fff;
+        }
+		
+		.welcome-box {
+    text-align: justify;
+}
+
+		<!-- v -->
+    </style>
+	
+</head>
+<body>
+
+ <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#"><i class="fas fa-taxi"></i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about-us">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#follow-us">Follow Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallery">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#book-now">Book Now</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#offers">Offers</a>
+                </li>
+                </ul>
+        </div>
+    </nav>
+
+<section id="welcome" class="welcome decorative-background" >
+    <!-- Add the video element as the background -->
+    <div class="video-carousel">
+    <!-- Video 1 -->
+    <div class="video-container" onclick="toggleVideo('welcomeVideo1')">
+        <video autoplay muted loop id="welcomeVideo1" class="welcomeVideoBody">
+            <source src="../Peak Travelers/Videos/drone_valley_view.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="video-container" onclick="toggleVideo('welcomeVideo2')">
+        <video autoplay muted loop id="welcomeVideo2" class="welcomeVideoBody">
+            <source src="../Peak Travelers/Videos/highway_view.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <!-- Video 3 -->
+    <div class="video-container" onclick="toggleVideo('welcomeVideo3')">
+        <video autoplay muted loop id="welcomeVideo3" class="welcomeVideoBody">
+            <source src="../Peak Travelers/Videos/mix_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <!-- Video 4 -->
+    <div class="video-container" onclick="toggleVideo('welcomeVideo4')">
+        <video autoplay muted loop id="welcomeVideo4" class="welcomeVideoBody">
+            <source src="../Peak Travelers/Videos/mix_video_v2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+    <div class="container">
+        <div class="welcome-box">
+            <h1>Welcome to Peak Traveller Tour & Taxi Service</h1>
+            <p>Discover the city with Peak Traveller, your trusted partner for comfortable and reliable transportation. We offer a seamless travel experience with a diverse fleet of vehicles, professional drivers, and a commitment to customer satisfaction.</p>
+            <p>Experience the difference with Peak Traveller:</p>
+            <ul>
+                <li>Comfortable and Safe Rides</li>
+                <li>Professional and Experienced Drivers</li>
+                <li>Convenient Booking Options</li>
+                <li>24/7 Customer Support</li>
+            </ul>
+        </div>
+        <a href="#book-now" class="cta-button">Book Now</a>
+    </div>
+</section>
+
+		
+     <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Gallery</h2>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="../Peak Travelers/Media/p1.jpg" alt="Cityscape">
+                        <div class="carousel-caption">
+                            <h3>Cityscape</h3>
+                            <p>Explore the city with our reliable taxi service.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="../Peak Travelers/Media/p2.jpg" alt="Night Lights">
+                        <div class="carousel-caption">
+                            <h3>Night Lights</h3>
+                            <p>Experience the city lights in the comfort of our taxis.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="../Peak Travelers/Media/p3.jpg" alt="Nature Drive">
+                        <div class="carousel-caption">
+                            <h3>Nature Drive</h3>
+                            <p>Enjoy a scenic drive surrounded by nature.</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+     <section id="special-offers">
+        <div class="container">
+            <h2>Special Offers and Travel Packages</h2>
+
+            <!-- Budget Selection Bar -->
+            <div class="form-group">
+                <label for="budget-selection">Select Budget:</label>
+                <select class="form-control" id="budget-selection" onchange="filterOffersByBudget(this.value)">
+                    <option value="all">All Budgets</option>
+                    <option value="standard">Standard</option>
+                    <option value="premium">Premium</option>
+                    <option value="luxury">Luxury</option>
+                </select>
+            </div>
+
+            <!-- Carousel Display of Offers and Budget Details -->
+            <div id="offers-carousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- Example Carousel Item, you can add more dynamically based on offers -->
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Weekend Special</h3>
+                                <p>10% off on all rides</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Budget: Premium</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more carousel items based on your offers -->
+                </div>
+                <a class="carousel-control-prev" href="#offers-carousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#offers-carousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </section>
+	
+     <!-- About Us Section -->
+    <section id="about-us">
+        <div class="container">
+            <h2>About Peak Traveller</h2>
+
+            <!-- Tabs for Car Details and Driver Details -->
+            <ul class="nav nav-tabs" id="aboutUsTabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="car-details-tab" data-toggle="tab" href="#car-details" role="tab" aria-controls="car-details" aria-selected="true">Car Details</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="driver-details-tab" data-toggle="tab" href="#driver-details" role="tab" aria-controls="driver-details" aria-selected="false">Driver Details</a>
+                </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="aboutUsTabsContent">
+                <!-- Car Details Tab -->
+                <div class="tab-pane fade show active" id="car-details" role="tabpanel" aria-labelledby="car-details-tab">
+                    <div class="row">
+                        <!-- Left Side: Car Photo Carousel -->
+                        <div class="col-md-6">
+                            <div id="carPhotosCarousel" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="../Peak Travelers/Media/swift.jpg" class="d-block w-100" alt="Swift">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="../Peak Travelers/Media/vitara.jpg" class="d-block w-100" alt="Vitara">
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carPhotosCarousel" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carPhotosCarousel" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Right Side: Car Details -->
+                        <div class="col-md-6">
+                            <div class="car-details">
+                                <h4>Car Details</h4>
+                                <p>Model: Swift</p>
+                                <p>Car Type: Taxi</p>
+                                <p>Sitting Capacity: 4</p>
+                                <p>Insurance/Pollution Certificate: Yes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Driver Details Tab -->
+                <div class="tab-pane fade" id="driver-details" role="tabpanel" aria-labelledby="driver-details-tab">
+                    <div class="row">
+                        <!-- Left Side: Driver Photo -->
+                        <div class="col-md-6">
+                            <img src="driver1.jpg" class="small-image" alt="Driver Photo">
+                        </div>
+
+                        <!-- Right Side: Driver Details -->
+                        <div class="col-md-6">
+                            <div class="driver-details">
+                                <h4>Driver Details</h4>
+                                <p>Name: Dinesh</p>
+                                <p>Experience: 10 years</p>
+                                <p>Contact: <i class="fab fa-whatsapp whatsapp-icon"></i> <a href="https://wa.me/91987654321" target="_blank">+91-987654321</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p>Experience the difference with Peak Traveller. Our diverse fleet, professional drivers, and dedication to customer satisfaction set us apart. Book a ride with us and enjoy a journey that combines comfort, safety, and reliability.</p>
+        </div>
+    </section>
+		
+	 <section id="book-now">
+        <div class="container">
+            <h2>Book Now</h2>
+            <p>Book your ride with Peak Traveller and experience convenient and reliable transportation.</p>
+            <form id="booking-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="pickup-point">Pickup Point:</label>
+                    <select class="form-control" id="pickup-point" name="pickup-point" required>
+                        <option value="airport">Airport</option>
+                        <option value="hotel">Hotel</option>
+                        <option value="station">Station</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="budget">Budget:</label>
+                    <select class="form-control" id="budget" name="budget" required>
+                        <option value="standard">Standard</option>
+                        <option value="premium">Premium</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="trip-from">Trip From:</label>
+                    <input type="text" class="form-control" id="trip-from" name="trip-from" required>
+                </div>
+                <div class="form-group">
+                    <label for="trip-to">Trip To:</label>
+                    <input type="text" class="form-control" id="trip-to" name="trip-to" required>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="submitBooking()">Submit</button>
+            </form>
+        </div>
+    </section>
+  
+	<section id="followUS">
+        <div class="container">
+            <h2>Connect with Peak Traveller</h2>
+            <div class="follow-us-icons">
+                <a href="https://www.facebook.com/peaktraveller" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com/peaktraveller" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/peaktraveller" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.snapchat.com/add/yourusername" target="_blank"><i class="fab fa-snapchat"></i></a>
+                <a href="https://www.reddit.com/user/yourusername" target="_blank"><i class="fab fa-reddit"></i></a>
+                <a href="https://wa.me/yourphonenumber" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <!-- Add more social media icons as needed -->
+            </div>
+            <div class="follow-us-description">
+                <p>Stay in the loop with Peak Traveller! Follow us on Facebook, Twitter, Instagram, Snapchat, and Reddit for the latest updates, exclusive promotions, and behind-the-scenes content. Have a question or need assistance? Connect with us on WhatsApp for real-time support. Your journey with Peak Traveller begins here!</p>
+            </div>
+        </div>
+    </section>
+	
+	
+  <!-- Bootstrap JS and Popper.js CDN -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Font Awesome CDN -->
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+
+    <!-- Twilio SMS Integration Script -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+	<script>
+	
+	function toggleVideo() {
+        var video = document.getElementById("welcomeVideo");
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    }
+	function filterOffersByBudget(selectedBudget) {
+            // Example offers data
+            const offers = [
+                { name: 'Weekend Special', discount: '10%', budget: 'premium' },
+                { name: 'New User Discount', discount: '$5 off', budget: 'standard' },
+                // Add more offers as needed
+            ];
+
+            // Filter offers based on the selected budget
+            const filteredOffers = selectedBudget === 'all'
+                ? offers
+                : offers.filter(offer => offer.budget === selectedBudget);
+
+            // Update carousel items dynamically
+            const carouselInner = document.querySelector('#offers-carousel .carousel-inner');
+            carouselInner.innerHTML = ''; // Clear existing items
+
+            filteredOffers.forEach((offer, index) => {
+                const carouselItem = document.createElement('div');
+                carouselItem.classList.add('carousel-item');
+
+                if (index === 0) {
+                    carouselItem.classList.add('active');
+                }
+
+                const row = document.createElement('div');
+                row.classList.add('row');
+
+                const leftColumn = document.createElement('div');
+                leftColumn.classList.add('col-md-6');
+
+                const rightColumn = document.createElement('div');
+                rightColumn.classList.add('col-md-6');
+
+                const offerTitle = document.createElement('h3');
+                offerTitle.textContent = offer.name;
+
+                const offerDetails = document.createElement('p');
+                offerDetails.textContent = `Offer: ${offer.discount}`;
+
+                const budgetDetails = document.createElement('h4');
+                budgetDetails.textContent = `Budget: ${capitalizeFirstLetter(offer.budget)}`;
+
+                leftColumn.appendChild(offerTitle);
+                leftColumn.appendChild(offerDetails);
+                rightColumn.appendChild(budgetDetails);
+
+                row.appendChild(leftColumn);
+                row.appendChild(rightColumn);
+
+                carouselItem.appendChild(row);
+                carouselInner.appendChild(carouselItem);
+            });
+        }
+    function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+	function submitBooking() {
+            // Collect form data
+            var name = $("#name").val();
+            var phone = $("#phone").val();
+            var pickupPoint = $("#pickup-point").val();
+            var budget = $("#budget").val();
+            var tripFrom = $("#trip-from").val();
+            var tripTo = $("#trip-to").val();
+
+            // Send SMS using Twilio (placeholder, actual implementation requires server-side code)
+            $.ajax({
+                type: "POST",
+                url: "YOUR_SERVER_ENDPOINT_FOR_TWILIO_INTEGRATION",
+                data: {
+                    name: name,
+                    phone: phone,
+                    pickupPoint: pickupPoint,
+                    budget: budget,
+                    tripFrom: tripFrom,
+                    tripTo: tripTo
+                },
+                success: function(response) {
+                    alert("Booking successful! You will receive an SMS shortly.");
+                    // Reset form
+                    $("#booking-form")[0].reset();
+                },
+                error: function(error) {
+                    console.error("Error sending SMS:", error);
+                    alert("Error sending SMS. Please try again later.");
+                }
+            });
+        }
+    
+	</script>
+
+</body>
+
+</html>
